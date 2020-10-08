@@ -218,7 +218,8 @@ elseif(MSVC)
 
     list(APPEND OSD_COMPILER_FLAGS
                     /W3     # Use warning level recommended for production purposes.
-                    /WX     # Treat all compiler warnings as errors.
+                    # TODO(Tangent): Removed for initial rez build
+                    #/WX     # Treat all compiler warnings as errors.
 
                     # warning C4005: macro redefinition
                     /wd4005
@@ -318,6 +319,9 @@ option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 # processing Find* modules, since some of the Find* modules invoked
 # below may wind up stomping over this value.
 set(build_shared_libs "${BUILD_SHARED_LIBS}")
+
+# ====== Tangent Rez Deps
+include(${CMAKE_CURRENT_SOURCE_DIR}/rez_deps.cmake)
 
 set(OSD_GPU FALSE)
 
