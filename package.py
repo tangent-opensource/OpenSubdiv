@@ -1,29 +1,27 @@
 name = 'opensubdiv'
 
-version = '3.4.3-ta.1.0.0'
+version = '3.3.3-houdini-18.0.532-ta.1.0.0'
 
 authors = [
     'benjamin.skinner',
     'pixar',
+    'sidefx',
 ]
 
 variants = [
     ['platform-windows', 'arch-x64', 'os-windows-10'],
 ]
 
-requires = [
-    'glew-2.0.0',
+private_build_requires = [
+    'python-2',
+    'houdini-18.0.532',
 ]
 
-@early()
-def private_build_requires():
-    import sys
-    if 'win' in str(sys.platform):
-        return ['visual_studio']
-    else:
-        return ['gcc-7']
+build_requires = [
+    'glew-1.1.0-houdini',
+]
 
-build_system = "cmake"
+build_command = "python {root}/rez_build.py"
 
 def commands():
 
