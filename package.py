@@ -17,7 +17,7 @@ private_build_requires = [
     'houdini-18.0.532',
 ]
 
-build_requires = [
+requires = [
     'glew-1.1.0-houdini',
 ]
 
