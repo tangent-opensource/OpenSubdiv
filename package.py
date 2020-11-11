@@ -1,6 +1,6 @@
 name = 'opensubdiv'
 
-version = '3.3.3-houdini-18.0.532-ta.1.0.0'
+version = '3.4.3-houdini-18.5.351-ta.1.0.0'
 
 authors = [
     'benjamin.skinner',
@@ -14,7 +14,7 @@ variants = [
 
 private_build_requires = [
     'python-2',
-    'houdini-18.0.532',
+    'houdini-18.5.351',
 ]
 
 requires = [
