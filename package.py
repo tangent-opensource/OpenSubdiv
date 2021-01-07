@@ -1,6 +1,6 @@
 name = 'opensubdiv'
 
-version = '3.4.3-houdini-18.5.351-ta.1.0.0'
+version = '3.4.3-houdini-18.5.351-ta.1.1.0'
 
 authors = [
     'benjamin.skinner',
@@ -10,6 +10,7 @@ authors = [
 
 variants = [
     ['platform-windows', 'arch-x64', 'os-windows-10'],
+    ['platform-linux', 'arch-x86_64', 'os-centos-7'],
 ]
 
 private_build_requires = [
@@ -18,7 +19,7 @@ private_build_requires = [
 ]
 
 requires = [
-    'glew-1.1.0-houdini',
+    'glew-1.13.0-houdini',
 ]
 
 build_command = "python {root}/rez_build.py"
