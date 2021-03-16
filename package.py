@@ -1,6 +1,8 @@
 name = 'opensubdiv'
 
-version = '3.4.3-houdini-18.5.351-ta.1.1.0'
+houdini_version = '18.5.499'
+
+version = '3.4.3-houdini-{}-ta.1.1.0'.format(houdini_version)
 
 authors = [
     'benjamin.skinner',
@@ -8,14 +10,26 @@ authors = [
     'sidefx',
 ]
 
-variants = [
-    ['platform-windows', 'arch-x64', 'os-windows-10'],
+
+linux_variants = [
     ['platform-linux', 'arch-x86_64', 'os-centos-7'],
 ]
 
+windows_variants = [ 
+    ['platform-windows', 'arch-x64', 'os-windows-10'],
+]
+
+@early()
+def variants():
+    import sys
+    if 'win' in str(sys.platform):
+        return windows_variants
+    else:
+        return linux_variants
+
 private_build_requires = [
     'python-2',
-    'houdini-18.5.351',
+    'houdini-{}'.format(houdini_version),
 ]
 
 requires = [
